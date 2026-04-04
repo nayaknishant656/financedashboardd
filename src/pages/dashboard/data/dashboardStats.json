@@ -1,0 +1,228 @@
+{
+    "summary": [
+        {
+            "title": "Total Balance",
+            "amount": "$45,231.89",
+            "change": "+12.5%",
+            "isPositive": true
+        },
+        {
+            "title": "Spend",
+            "amount": "$2,845.00",
+            "change": "-2.4%",
+            "isPositive": false
+        },
+        {
+            "title": "Income Balance",
+            "amount": "$15,400.00",
+            "change": "+5.7%",
+            "isPositive": true
+        }
+    ],
+    "timeSeries": [
+        {
+            "label": "Mon",
+            "balance": 4000,
+            "spend": 2400,
+            "essential": 1200,
+            "luxury": 800,
+            "investment": 400
+        },
+        {
+            "label": "Tue",
+            "balance": 3000,
+            "spend": 1398,
+            "essential": 700,
+            "luxury": 400,
+            "investment": 298
+        },
+        {
+            "label": "Wed",
+            "balance": 2000,
+            "spend": 9800,
+            "essential": 4000,
+            "luxury": 4800,
+            "investment": 1000
+        },
+        {
+            "label": "Thu",
+            "balance": 2780,
+            "spend": 3908,
+            "essential": 2000,
+            "luxury": 1500,
+            "investment": 408
+        },
+        {
+            "label": "Fri",
+            "balance": 1890,
+            "spend": 4800,
+            "essential": 2800,
+            "luxury": 1200,
+            "investment": 800
+        },
+        {
+            "label": "Sat",
+            "balance": 2390,
+            "spend": 3800,
+            "essential": 1500,
+            "luxury": 1800,
+            "investment": 500
+        },
+        {
+            "label": "Sun",
+            "balance": 3490,
+            "spend": 4300,
+            "essential": 2300,
+            "luxury": 1000,
+            "investment": 1000
+        }
+    ],
+    "spendingBreakdown": [
+        {
+            "id": 0,
+            "value": 4500,
+            "label": "Essential",
+            "color": "#10B981"
+        },
+        {
+            "id": 1,
+            "value": 2800,
+            "label": "Luxury",
+            "color": "#3B82F6"
+        },
+        {
+            "id": 2,
+            "value": 1200,
+            "label": "Investment",
+            "color": "#F59E0B"
+        },
+        {
+            "id": 3,
+            "value": 850,
+            "label": "Utilities",
+            "color": "#8B5CF6"
+        },
+        {
+            "id": 4,
+            "value": 2100,
+            "label": "Rent",
+            "color": "#EF4444"
+        },
+        {
+            "id": 5,
+            "value": 600,
+            "label": "Entertainment",
+            "color": "#EC4899"
+        },
+        {
+            "id": 6,
+            "value": 300,
+            "label": "Gifts",
+            "color": "#14B8A6"
+        },
+        {
+            "id": 7,
+            "value": 450,
+            "label": "Miscellaneous",
+            "color": "#64748B"
+        }
+    ],
+    "transactionHistory": [
+        {
+            "id": 1,
+            "company": "Adobe Creative Cloud",
+            "amount": 54.99,
+            "type": "debit",
+            "date": "2024-04-04",
+            "category": "Subscription"
+        },
+        {
+            "id": 2,
+            "company": "Stripe Payout",
+            "amount": 2450.00,
+            "type": "credit",
+            "date": "2024-04-04",
+            "category": "Income"
+        },
+        {
+            "id": 3,
+            "company": "Netflix Subscription",
+            "amount": 19.99,
+            "type": "debit",
+            "date": "2024-04-03",
+            "category": "Entertainment"
+        },
+        {
+            "id": 4,
+            "company": "Apple Store",
+            "amount": 1299.00,
+            "type": "debit",
+            "date": "2024-04-02",
+            "category": "Electronics"
+        },
+        {
+            "id": 5,
+            "company": "Amazon AWS",
+            "amount": 142.50,
+            "type": "debit",
+            "date": "2024-04-01",
+            "category": "Business"
+        },
+        {
+            "id": 6,
+            "company": "Grocery Market",
+            "amount": 85.20,
+            "type": "debit",
+            "date": "2024-03-31",
+            "category": "Groceries"
+        },
+        {
+            "id": 7,
+            "company": "Freelance Client X",
+            "amount": 1800.00,
+            "type": "credit",
+            "date": "2024-03-30",
+            "category": "Income"
+        },
+        {
+            "id": 8,
+            "company": "Gas Station",
+            "amount": 45.00,
+            "type": "debit",
+            "date": "2024-03-29",
+            "category": "Transport"
+        },
+        {
+            "id": 9,
+            "company": "Starbucks Coffee",
+            "amount": 6.50,
+            "type": "debit",
+            "date": "2024-03-28",
+            "category": "Food"
+        },
+        {
+            "id": 10,
+            "company": "Gym Membership",
+            "amount": 50.00,
+            "type": "debit",
+            "date": "2024-03-27",
+            "category": "Health"
+        },
+        {
+            "id": 11,
+            "company": "Transfer to Savings",
+            "amount": 1000.00,
+            "type": "debit",
+            "date": "2024-03-26",
+            "category": "Savings"
+        },
+        {
+            "id": 12,
+            "company": "Dividend Payout",
+            "amount": 120.40,
+            "type": "credit",
+            "date": "2024-03-25",
+            "category": "Investment"
+        }
+    ]
+}
