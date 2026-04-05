@@ -1,0 +1,16 @@
+{
+    "version": 2,
+    "rewrites": [
+        {
+            "source": "/(.*)",
+            "destination": "/index.html"
+        }
+    ],
+    "github": {
+        "silent": true,
+        "enabled": false
+    },
+    "env": {
+        "CI": "false"
+    }
+}
