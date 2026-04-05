@@ -1,208 +1,208 @@
 {
     "savingsInsights": {
-        "past3MonthsSaved": 15400,
-        "past3MonthsSpent": 8200,
-        "potentialSavings": 4500
+        "past3MonthsSaved": 125400,
+        "past3MonthsSpent": 842000,
+        "potentialSavings": 45000
     },
-    "votesTurnout": [
+    "companyExpenses": [
         {
-            "country": "Belgium",
-            "turnout": 88
+            "category": "Talent Acq.",
+            "amount": 88
         },
         {
-            "country": "Sweden",
-            "turnout": 87
+            "category": "Maintenance",
+            "amount": 75
         },
         {
-            "country": "Germany",
-            "turnout": 76
+            "category": "Marketing",
+            "amount": 62
         },
         {
-            "country": "Ireland",
-            "turnout": 50
+            "category": "Employer Tax",
+            "amount": 50
         },
         {
-            "country": "Luxembourg",
-            "turnout": 89
+            "category": "Electricity",
+            "amount": 89
         }
     ],
     "financeInsights": {
         "portfolioSummary": {
-            "totalValue": "$124,592.00",
-            "netReturn": "+14.2%",
-            "dividendYield": "3.4%",
-            "riskProfile": "Aggressive",
-            "volatility": "High"
+            "totalValue": "₹2,450,920.00",
+            "netReturn": "+18.5%",
+            "dividendYield": "2.1%",
+            "riskProfile": "Balanced",
+            "volatility": "Moderate"
         },
         "assetAllocation": [
             {
-                "category": "Equity",
-                "value": 65,
+                "category": "Operating Cash",
+                "value": 45,
                 "color": "#2563EB"
             },
             {
-                "category": "Fixed Income",
-                "value": 20,
+                "category": "R&D Investment",
+                "value": 30,
                 "color": "#10B981"
             },
             {
-                "category": "Crypto",
-                "value": 10,
+                "category": "Marketing Capital",
+                "value": 15,
                 "color": "#F59E0B"
             },
             {
-                "category": "Cash",
-                "value": 5,
+                "category": "Emergency Fund",
+                "value": 10,
                 "color": "#64748B"
             }
         ],
         "monthlyPnL": [
             {
                 "month": "Jan",
-                "profit": 4200,
-                "loss": 1200
+                "profit": 420000,
+                "loss": 310000
             },
             {
                 "month": "Feb",
-                "profit": 3500,
-                "loss": 1500
+                "profit": 450000,
+                "loss": 290000
             },
             {
                 "month": "Mar",
-                "profit": 5100,
-                "loss": 900
+                "profit": 510000,
+                "loss": 320000
             },
             {
                 "month": "Apr",
-                "profit": 4800,
-                "loss": 2100
+                "profit": 480000,
+                "loss": 350000
             }
         ]
     },
     "summary": [
         {
-            "title": "Total Balance",
-            "amount": "$45,231.89",
-            "change": "+12.5%",
+            "title": "Total Revenue",
+            "amount": "₹1,845,231.89",
+            "change": "+14.2%",
             "isPositive": true
         },
         {
-            "title": "Spend",
-            "amount": "$2,845.00",
-            "change": "-2.4%",
+            "title": "Operating Expenses",
+            "amount": "₹1,245,845.00",
+            "change": "+5.4%",
             "isPositive": false
         },
         {
-            "title": "Income Balance",
-            "amount": "$15,400.00",
-            "change": "+5.7%",
+            "title": "Net Profit",
+            "amount": "₹599,386.89",
+            "change": "+22.7%",
             "isPositive": true
         }
     ],
     "timeSeries": [
         {
             "label": "Mon",
-            "balance": 4000,
-            "spend": 2400,
-            "essential": 1200,
-            "luxury": 800,
-            "investment": 400
+            "balance": 45000,
+            "spend": 32000,
+            "essential": 20000,
+            "luxury": 8000,
+            "investment": 4000
         },
         {
             "label": "Tue",
-            "balance": 3000,
-            "spend": 1398,
-            "essential": 700,
-            "luxury": 400,
-            "investment": 298
+            "balance": 48000,
+            "spend": 34000,
+            "essential": 21000,
+            "luxury": 9000,
+            "investment": 4000
         },
         {
             "label": "Wed",
-            "balance": 2000,
-            "spend": 9800,
-            "essential": 4000,
-            "luxury": 4800,
-            "investment": 1000
+            "balance": 42000,
+            "spend": 33000,
+            "essential": 19000,
+            "luxury": 10000,
+            "investment": 4000
         },
         {
             "label": "Thu",
-            "balance": 2780,
-            "spend": 3908,
-            "essential": 2000,
-            "luxury": 1500,
-            "investment": 408
+            "balance": 55000,
+            "spend": 31000,
+            "essential": 18000,
+            "luxury": 9000,
+            "investment": 4000
         },
         {
             "label": "Fri",
-            "balance": 1890,
-            "spend": 4800,
-            "essential": 2800,
-            "luxury": 1200,
-            "investment": 800
+            "balance": 58000,
+            "spend": 38000,
+            "essential": 24000,
+            "luxury": 10000,
+            "investment": 4000
         },
         {
             "label": "Sat",
-            "balance": 2390,
-            "spend": 3800,
-            "essential": 1500,
-            "luxury": 1800,
-            "investment": 500
+            "balance": 60000,
+            "spend": 25000,
+            "essential": 15000,
+            "luxury": 6000,
+            "investment": 4000
         },
         {
             "label": "Sun",
-            "balance": 3490,
-            "spend": 4300,
-            "essential": 2300,
-            "luxury": 1000,
-            "investment": 1000
+            "balance": 62000,
+            "spend": 22000,
+            "essential": 12000,
+            "luxury": 6000,
+            "investment": 4000
         }
     ],
     "spendingBreakdown": [
         {
             "id": 0,
-            "value": 4500,
-            "label": "Essential",
-            "color": "#10B981"
-        },
-        {
-            "id": 1,
-            "value": 2800,
-            "label": "Luxury",
+            "value": 450000,
+            "label": "Talent (Payroll)",
             "color": "#3B82F6"
         },
         {
+            "id": 1,
+            "value": 280000,
+            "label": "Marketing",
+            "color": "#10B981"
+        },
+        {
             "id": 2,
-            "value": 1200,
-            "label": "Investment",
+            "value": 125000,
+            "label": "R&D",
             "color": "#F59E0B"
         },
         {
             "id": 3,
-            "value": 850,
-            "label": "Utilities",
+            "value": 85000,
+            "label": "Maintenance",
             "color": "#8B5CF6"
         },
         {
             "id": 4,
-            "value": 2100,
-            "label": "Rent",
+            "value": 210000,
+            "label": "Employer Taxes",
             "color": "#EF4444"
         },
         {
             "id": 5,
-            "value": 600,
-            "label": "Entertainment",
+            "value": 45000,
+            "label": "Electricity",
             "color": "#EC4899"
         },
         {
             "id": 6,
-            "value": 300,
-            "label": "Gifts",
+            "value": 30000,
+            "label": "Legal",
             "color": "#14B8A6"
         },
         {
             "id": 7,
-            "value": 450,
+            "value": 15000,
             "label": "Miscellaneous",
             "color": "#64748B"
         }
@@ -210,262 +210,150 @@
     "transactionHistory": [
         {
             "id": 1,
-            "company": "Adobe Creative Cloud",
-            "amount": 54.99,
+            "company": "Amazon Web Services",
+            "amount": 14500.00,
             "type": "debit",
-            "date": "2024-04-04",
-            "category": "Subscription"
+            "date": "2024-04-05",
+            "category": "Maintenance"
         },
         {
             "id": 2,
-            "company": "Stripe Payout",
-            "amount": 2450.00,
+            "company": "Corporate Client Alpha",
+            "amount": 125000.00,
             "type": "credit",
-            "date": "2024-04-04",
-            "category": "Income"
+            "date": "2024-04-05",
+            "category": "Revenue"
         },
         {
             "id": 3,
-            "company": "Netflix Subscription",
-            "amount": 19.99,
+            "company": "Google Ads Campaign",
+            "amount": 42000.00,
             "type": "debit",
-            "date": "2024-04-03",
-            "category": "Entertainment"
+            "date": "2024-04-04",
+            "category": "Marketing"
         },
         {
             "id": 4,
-            "company": "Apple Store",
-            "amount": 1299.00,
+            "company": "Talent Monthly Payroll",
+            "amount": 380000.00,
             "type": "debit",
-            "date": "2024-04-02",
-            "category": "Electronics"
+            "date": "2024-04-03",
+            "category": "Talent"
         },
         {
             "id": 5,
-            "company": "Amazon AWS",
-            "amount": 142.50,
+            "company": "City Power & Electric",
+            "amount": 12850.00,
             "type": "debit",
-            "date": "2024-04-01",
-            "category": "Business"
+            "date": "2024-04-02",
+            "category": "Electricity"
         },
         {
             "id": 6,
-            "company": "Grocery Market",
-            "amount": 85.20,
+            "company": "Sub-Contractor Services",
+            "amount": 15000.00,
             "type": "debit",
-            "date": "2024-03-31",
-            "category": "Groceries"
+            "date": "2024-04-01",
+            "category": "Talent"
         },
         {
             "id": 7,
-            "company": "Freelance Client X",
-            "amount": 1800.00,
+            "company": "Venture Fund Payout",
+            "amount": 500000.00,
             "type": "credit",
-            "date": "2024-03-30",
-            "category": "Income"
+            "date": "2024-03-31",
+            "category": "Revenue"
         },
         {
             "id": 8,
-            "company": "Gas Station",
-            "amount": 45.00,
+            "company": "Office Space Maintenance",
+            "amount": 8500.00,
             "type": "debit",
-            "date": "2024-03-29",
-            "category": "Transport"
+            "date": "2024-03-30",
+            "category": "Maintenance"
         },
         {
             "id": 9,
-            "company": "Starbucks Coffee",
-            "amount": 6.50,
+            "company": "Internal R&D Lab Tools",
+            "amount": 25000.00,
             "type": "debit",
-            "date": "2024-03-28",
-            "category": "Food"
+            "date": "2024-03-29",
+            "category": "R&D"
         },
         {
             "id": 10,
-            "company": "Gym Membership",
-            "amount": 50.00,
+            "company": "Federal Employer Tax",
+            "amount": 54000.00,
             "type": "debit",
-            "date": "2024-03-27",
-            "category": "Health"
+            "date": "2024-03-28",
+            "category": "Employer"
         },
         {
             "id": 11,
-            "company": "Transfer to Savings",
-            "amount": 1000.00,
+            "company": "Meta Ads Marketing",
+            "amount": 32000.00,
             "type": "debit",
-            "date": "2024-03-26",
-            "category": "Savings"
+            "date": "2024-03-27",
+            "category": "Marketing"
         },
         {
             "id": 12,
-            "company": "Dividend Payout",
-            "amount": 120.40,
+            "company": "Enterprise SaaS Sales",
+            "amount": 85000.00,
             "type": "credit",
-            "date": "2024-03-25",
-            "category": "Investment"
+            "date": "2024-03-26",
+            "category": "Revenue"
         },
         {
             "id": 13,
-            "company": "Coffee Day",
-            "amount": 4.50,
+            "company": "Hardware Maintenance",
+            "amount": 12000.00,
             "type": "debit",
-            "date": "2024-03-24",
-            "category": "Food"
+            "date": "2024-03-25",
+            "category": "Maintenance"
         },
         {
             "id": 14,
-            "company": "Udemy Courses",
-            "amount": 12.99,
+            "company": "Tech Conference Sponsorship",
+            "amount": 20000.00,
             "type": "debit",
-            "date": "2024-03-23",
-            "category": "Education"
+            "date": "2024-03-24",
+            "category": "Marketing"
         },
         {
             "id": 15,
-            "company": "Microsoft Azure",
-            "amount": 89.00,
+            "company": "Monthly Energy Bill",
+            "amount": 11000.00,
             "type": "debit",
-            "date": "2024-03-22",
-            "category": "Business"
+            "date": "2024-03-23",
+            "category": "Electricity"
         },
         {
             "id": 16,
-            "company": "Spotify Music",
-            "amount": 9.99,
+            "company": "Legal Counsel retainer",
+            "amount": 15000.00,
             "type": "debit",
-            "date": "2024-03-21",
-            "category": "Entertainment"
-        },
-        {
-            "id": 17,
-            "company": "Walmart Grocery",
-            "amount": 112.30,
-            "type": "debit",
-            "date": "2024-03-20",
-            "category": "Groceries"
-        },
-        {
-            "id": 18,
-            "company": "Bonus Salary",
-            "amount": 500.00,
-            "type": "credit",
-            "date": "2024-03-19",
-            "category": "Income"
-        },
-        {
-            "id": 19,
-            "company": "Electric Bill",
-            "amount": 75.00,
-            "type": "debit",
-            "date": "2024-03-18",
-            "category": "Utilities"
-        },
-        {
-            "id": 20,
-            "company": "Water Bill",
-            "amount": 30.00,
-            "type": "debit",
-            "date": "2024-03-17",
-            "category": "Utilities"
-        },
-        {
-            "id": 21,
-            "company": "Internet Fiber",
-            "amount": 49.99,
-            "type": "debit",
-            "date": "2024-03-16",
-            "category": "Utilities"
-        },
-        {
-            "id": 22,
-            "company": "Uber Ride",
-            "amount": 15.60,
-            "type": "debit",
-            "date": "2024-03-15",
-            "category": "Transport"
-        },
-        {
-            "id": 23,
-            "company": "Zomato Food",
-            "amount": 22.40,
-            "type": "debit",
-            "date": "2024-03-14",
-            "category": "Food"
-        },
-        {
-            "id": 24,
-            "company": "Rent Payment",
-            "amount": 1200.00,
-            "type": "debit",
-            "date": "2024-03-13",
-            "category": "Rent"
-        },
-        {
-            "id": 25,
-            "company": "Stock Profit",
-            "amount": 450.00,
-            "type": "credit",
-            "date": "2024-03-12",
-            "category": "Investment"
-        },
-        {
-            "id": 26,
-            "company": "H&M Apparel",
-            "amount": 65.00,
-            "type": "debit",
-            "date": "2024-03-11",
-            "category": "Luxury"
-        },
-        {
-            "id": 27,
-            "company": "Gym Supps",
-            "amount": 34.00,
-            "type": "debit",
-            "date": "2024-03-10",
-            "category": "Health"
-        },
-        {
-            "id": 28,
-            "company": "Amazon Prime",
-            "amount": 14.99,
-            "type": "debit",
-            "date": "2024-03-09",
-            "category": "Subscription"
-        },
-        {
-            "id": 29,
-            "company": "Freelance BonusX",
-            "amount": 300.00,
-            "type": "credit",
-            "date": "2024-03-08",
-            "category": "Income"
-        },
-        {
-            "id": 30,
-            "company": "Domain Reg",
-            "amount": 10.00,
-            "type": "debit",
-            "date": "2024-03-07",
-            "category": "Business"
+            "date": "2024-03-22",
+            "category": "Legal"
         }
     ],
     "insightsData": {
         "day": [
             [
-                1712188800000,
-                4200000
-            ],
-            [
-                1712217600000,
-                4500000
-            ],
-            [
-                1712246400000,
-                4100000
-            ],
-            [
                 1712275200000,
-                4800000
+                1250000
+            ],
+            [
+                1712304000000,
+                1320000
+            ],
+            [
+                1712332800000,
+                1280000
+            ],
+            [
+                1712361600000,
+                1450000
             ]
         ],
         "month": [
@@ -493,51 +381,51 @@
         "year": [
             [
                 1672531200000,
-                2500000
+                12500000
             ],
             [
                 1675209600000,
-                3200000
+                13200000
             ],
             [
                 1677628800000,
-                3800000
+                13800000
             ],
             [
                 1680307200000,
-                4100000
+                14100000
             ],
             [
                 1682899200000,
-                4500000
+                14500000
             ],
             [
                 1685577600000,
-                4800000
+                14800000
             ],
             [
                 1688169600000,
-                5100000
+                15100000
             ],
             [
                 1690848000000,
-                5400000
+                15400000
             ],
             [
                 1693526400000,
-                5800000
+                15800000
             ],
             [
                 1696118400000,
-                6100000
+                16100000
             ],
             [
                 1698796800000,
-                6500000
+                16500000
             ],
             [
                 1701388800000,
-                6800000
+                16800000
             ]
         ]
     }
