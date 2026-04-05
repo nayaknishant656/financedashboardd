@@ -6,7 +6,6 @@ export default function Quarterexpense() {
     const [chartOptions, setChartOptions] = useState({});
 
     useEffect(() => {
-        const documentStyle = getComputedStyle(document.documentElement);
         const data = {
             labels: ['Q1', 'Q2', 'Q3', 'Q4'],
             datasets: [
