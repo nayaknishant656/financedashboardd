@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import { useAuth } from '../../../context/AuthContext'
 import {
     FiGrid,
     FiCreditCard,
@@ -11,6 +12,7 @@ import {
 
 export default function Sidebar() {
     const location = useLocation();
+    const { logout } = useAuth();
 
     const navItems = [
         { name: 'Dashboard', path: '/', icon: <FiGrid /> },
@@ -58,12 +60,15 @@ export default function Sidebar() {
                     </div>
                     Settings
                 </Link>
-                <Link to="/logout" className="group flex items-center px-3 py-2 text-sm font-medium rounded-lg hover:bg-danger/20 text-sidebar-text hover:text-danger transition-all">
+                <button
+                    onClick={logout}
+                    className="w-full group flex items-center px-3 py-2 text-sm font-medium rounded-lg hover:bg-danger/20 text-sidebar-text hover:text-danger transition-all"
+                >
                     <div className="w-8 h-8 flex items-center justify-center rounded-md mr-3 transition-colors text-sidebar-text group-hover:text-danger">
                         <span className="text-lg"><FiLogOut /></span>
                     </div>
                     Logout
-                </Link>
+                </button>
             </div>
         </div>
     )
