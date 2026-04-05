@@ -59,11 +59,40 @@ export default function Transactions() {
         });
     };
 
+    // Calculate 30-day metrics
+    const stats30Days = useMemo(() => {
+        const thirtyDaysAgo = new Date('2024-04-05');
+        thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+
+        const recent = dashboardStats.transactionHistory.filter(tx => new Date(tx.date) >= thirtyDaysAgo);
+        const outgoing = recent.filter(tx => tx.type === 'debit').length;
+
+        return { total: recent.length, outgoing };
+    }, []);
+
     return (
         <div className="p-8 bg-background min-h-[calc(100vh-64px)]">
             <div className="max-w-[1400px] mx-auto">
-                <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 space-y-4 md:space-y-0 border-b border-divider pb-6">
-                    <h1 className="text-2xl font-black text-text-primary tracking-tight uppercase">Audit Logs</h1>
+                <div className="flex flex-col lg:flex-row lg:items-center justify-between mb-8 space-y-6 lg:space-y-0 border-b border-divider pb-8">
+                    <div className="flex items-center space-x-8">
+                        <div>
+                            <h1 className="text-2xl font-black text-text-primary tracking-tight uppercase">Audit Logs</h1>
+                            <p className="text-[10px] font-bold text-text-secondary uppercase tracking-widest mt-1">Full financial history and tracking</p>
+                        </div>
+
+                        <div className="h-10 w-px bg-divider hidden sm:block"></div>
+
+                        <div className="hidden sm:flex items-center space-x-8">
+                            <div className="flex flex-col">
+                                <span className="text-[10px] font-black text-text-secondary uppercase tracking-tighter">Rolling 30 Days</span>
+                                <span className="text-xl font-black text-primary">{stats30Days.total} <span className="text-[10px] text-text-secondary font-bold">TXNS</span></span>
+                            </div>
+                            <div className="flex flex-col">
+                                <span className="text-[10px] font-black text-text-secondary uppercase tracking-tighter">Outgoing Flow</span>
+                                <span className="text-xl font-black text-danger">{stats30Days.outgoing} <span className="text-[10px] text-text-secondary font-bold">DEBITS</span></span>
+                            </div>
+                        </div>
+                    </div>
 
                     <div className="flex flex-wrap items-center gap-3">
                         {/* Search Bar */}
