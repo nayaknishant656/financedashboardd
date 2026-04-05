@@ -1,16 +1,19 @@
 import React, { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { FiBell, FiUser, FiLogOut, FiSettings, FiChevronDown } from 'react-icons/fi'
+import { FiBell, FiUser, FiLogOut, FiSettings, FiChevronDown, FiMenu, FiX } from 'react-icons/fi'
+import { useAuth } from '../../context/AuthContext'
 
 export default function Header() {
     const location = useLocation();
-    const [isLoggedIn, setIsLoggedIn] = useState(true);
+    const { userRole, logout } = useAuth();
     const [showProfile, setShowProfile] = useState(false);
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     const navLinks = [
-        { name: 'Overview', path: '/' },
-        { name: 'Analytics', path: '/analytics' },
-        { name: 'Reports', path: '/reports' }
+        { name: 'Dashboard', path: '/' },
+        { name: 'Transactions', path: '/transactions' },
+        { name: 'Insights', path: '/insights' },
+        { name: 'Integration', path: '/integration' }
     ];
 
     return (
@@ -25,7 +28,7 @@ export default function Header() {
                         <span className="text-xl font-bold text-text-primary tracking-tight">Finance<span className="text-primary">Hub</span></span>
                     </Link>
 
-                    {/* Navigation */}
+                    {/* Desktop Navigation */}
                     <nav className="hidden md:flex items-center space-x-2">
                         {navLinks.map((link) => (
                             <Link
@@ -44,14 +47,14 @@ export default function Header() {
 
                 {/* Right Actions */}
                 <div className="flex items-center space-x-4">
-                    <button className="p-2 text-text-secondary hover:text-primary transition-colors relative">
+                    <button className="hidden sm:block p-2 text-text-secondary hover:text-primary transition-colors relative">
                         <FiBell size={18} />
                         <span className="absolute top-2 right-2 w-2 h-2 bg-danger rounded-full border-2 border-card"></span>
                     </button>
 
-                    <div className="h-6 w-px bg-divider mx-2"></div>
+                    <div className="hidden sm:block h-6 w-px bg-divider mx-2"></div>
 
-                    {isLoggedIn ? (
+                    {!!userRole ? (
                         <div className="relative">
                             <button
                                 onClick={() => setShowProfile(!showProfile)}
@@ -61,8 +64,8 @@ export default function Header() {
                                     <FiUser size={18} />
                                 </div>
                                 <div className="hidden sm:block text-left">
-                                    <p className="text-[11px] font-black text-text-primary uppercase leading-tight">Admin User</p>
-                                    <p className="text-[9px] font-bold text-text-secondary uppercase">Super Admin</p>
+                                    <p className="text-[11px] font-black text-text-primary uppercase leading-tight">{userRole} User</p>
+                                    <p className="text-[9px] font-bold text-text-secondary uppercase">Authorized Access</p>
                                 </div>
                                 <FiChevronDown size={14} className={`text-text-secondary transition-transform ${showProfile ? 'rotate-180' : ''}`} />
                             </button>
@@ -77,7 +80,7 @@ export default function Header() {
                                     </button>
                                     <div className="border-t border-divider my-1"></div>
                                     <button
-                                        onClick={() => setIsLoggedIn(false)}
+                                        onClick={logout}
                                         className="flex items-center w-full px-4 py-2.5 text-[10px] font-bold text-danger uppercase hover:bg-danger/10 transition-all"
                                     >
                                         <FiLogOut className="mr-3" /> Logout Audit
@@ -86,15 +89,44 @@ export default function Header() {
                             )}
                         </div>
                     ) : (
-                        <button
-                            onClick={() => setIsLoggedIn(true)}
+                        <Link
+                            to="/login"
                             className="px-5 py-2 bg-primary text-white text-[11px] font-black uppercase rounded-xl hover:opacity-90 shadow-lg shadow-primary/20 transition-all hover:-translate-y-0.5 active:scale-95"
                         >
                             Sign In
-                        </button>
+                        </Link>
                     )}
+
+                    {/* Mobile Menu Toggle */}
+                    <button
+                        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                        className="md:hidden p-2 text-text-secondary hover:text-primary transition-colors"
+                    >
+                        {mobileMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+                    </button>
                 </div>
             </div>
+
+            {/* Mobile Navigation Dropdown */}
+            {mobileMenuOpen && (
+                <div className="md:hidden bg-card border-b border-divider animate-in slide-in-from-top duration-300">
+                    <nav className="flex flex-col p-4 space-y-2">
+                        {navLinks.map((link) => (
+                            <Link
+                                key={link.name}
+                                to={link.path}
+                                onClick={() => setMobileMenuOpen(false)}
+                                className={`px-4 py-3 rounded-xl text-sm font-bold transition-all ${location.pathname === link.path
+                                    ? 'bg-primary/10 text-primary'
+                                    : 'text-text-secondary hover:bg-background'
+                                    }`}
+                            >
+                                {link.name}
+                            </Link>
+                        ))}
+                    </nav>
+                </div>
+            )}
         </header>
     )
 }

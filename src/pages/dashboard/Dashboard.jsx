@@ -8,11 +8,11 @@ export default function Dashboard() {
     return (
         <div className='top-section'>
             <TopSectionDashboard />
-            <div className='grid grid-cols-12 gap-4 px-4 items-start'>
-                <div className="col-span-8">
+            <div className='grid grid-cols-12 gap-4 px-2 md:px-4 items-start'>
+                <div className="col-span-12 lg:col-span-8">
                     <Timeserieschart />
                 </div>
-                <div className="col-span-4">
+                <div className="col-span-12 lg:col-span-4">
                     <StackingSpend />
                 </div>
             </div>
