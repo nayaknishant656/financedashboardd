@@ -28,7 +28,7 @@ export default function SpendTransection() {
                             </div>
                             <span className={`text-sm font-black ${tx.type === 'credit' ? 'text-success' : 'text-text-primary'
                                 }`}>
-                                {tx.type === 'credit' ? '+' : '-'}${tx.amount.toLocaleString()}
+                                {tx.type === 'credit' ? '+' : '-'}₹{tx.amount.toLocaleString()}
                             </span>
                         </div>
                     ))}
