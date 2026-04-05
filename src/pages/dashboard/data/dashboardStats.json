@@ -101,60 +101,100 @@
     ],
     "timeSeries": [
         {
-            "label": "Mon",
-            "balance": 45000,
-            "spend": 32000,
-            "essential": 20000,
-            "luxury": 8000,
-            "investment": 4000
+            "label": "Jan",
+            "balance": 450000,
+            "spend": 320000,
+            "essential": 200000,
+            "luxury": 80000,
+            "investment": 40000
         },
         {
-            "label": "Tue",
-            "balance": 48000,
-            "spend": 34000,
-            "essential": 21000,
-            "luxury": 9000,
-            "investment": 4000
+            "label": "Feb",
+            "balance": 480000,
+            "spend": 340000,
+            "essential": 210000,
+            "luxury": 90000,
+            "investment": 40000
         },
         {
-            "label": "Wed",
-            "balance": 42000,
-            "spend": 33000,
-            "essential": 19000,
-            "luxury": 10000,
-            "investment": 4000
+            "label": "Mar",
+            "balance": 520000,
+            "spend": 330000,
+            "essential": 190000,
+            "luxury": 100000,
+            "investment": 40000
         },
         {
-            "label": "Thu",
-            "balance": 55000,
-            "spend": 31000,
-            "essential": 18000,
-            "luxury": 9000,
-            "investment": 4000
+            "label": "Apr",
+            "balance": 550000,
+            "spend": 310000,
+            "essential": 180000,
+            "luxury": 90000,
+            "investment": 40000
         },
         {
-            "label": "Fri",
-            "balance": 58000,
-            "spend": 38000,
-            "essential": 24000,
-            "luxury": 10000,
-            "investment": 4000
+            "label": "May",
+            "balance": 580000,
+            "spend": 380000,
+            "essential": 240000,
+            "luxury": 100000,
+            "investment": 40000
         },
         {
-            "label": "Sat",
-            "balance": 60000,
-            "spend": 25000,
-            "essential": 15000,
-            "luxury": 6000,
-            "investment": 4000
+            "label": "Jun",
+            "balance": 610000,
+            "spend": 390000,
+            "essential": 250000,
+            "luxury": 100000,
+            "investment": 40000
         },
         {
-            "label": "Sun",
-            "balance": 62000,
-            "spend": 22000,
-            "essential": 12000,
-            "luxury": 6000,
-            "investment": 4000
+            "label": "Jul",
+            "balance": 590000,
+            "spend": 410000,
+            "essential": 260000,
+            "luxury": 110000,
+            "investment": 40000
+        },
+        {
+            "label": "Aug",
+            "balance": 630000,
+            "spend": 420000,
+            "essential": 270000,
+            "luxury": 110000,
+            "investment": 40000
+        },
+        {
+            "label": "Sep",
+            "balance": 650000,
+            "spend": 405000,
+            "essential": 255000,
+            "luxury": 110000,
+            "investment": 40000
+        },
+        {
+            "label": "Oct",
+            "balance": 680000,
+            "spend": 430000,
+            "essential": 280000,
+            "luxury": 110000,
+            "investment": 40000
+        },
+        {
+            "label": "Nov",
+            "balance": 710000,
+            "spend": 445000,
+            "essential": 295000,
+            "luxury": 110000,
+            "investment": 40000
+        },
+        {
+            "label": "Dec",
+            "balance": 750000,
+            "spend": 460000,
+            "essential": 310000,
+            "luxury": 110000,
+            "investment": 40000
         }
     ],
     "spendingBreakdown": [

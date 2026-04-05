@@ -29,7 +29,7 @@ export default function Timeserieschart() {
                 <Box sx={{ width: '100%', height: 320 }}>
                     <LineChart
                         series={[
-                            { data: revenueData, label: 'Revenue', color: '#2563EB', area: true },
+                            { data: revenueData, label: 'Revenue', color: '#2563EB' },
                             { data: expenseData, label: 'Op. Expenses', color: '#8B5CF6' }
                         ]}
                         xAxis={[{ scaleType: 'point', data: xLabels, height: 28 }]}

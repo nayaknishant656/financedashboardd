@@ -17,7 +17,7 @@ export default function Insights() {
         <div className="p-0">
             <Card />
             <Insightsheader range={range} setRange={setRange} />
-            <div className="grid grid-cols-12 gap-4 px-4 mt-2">
+            <div className="grid grid-cols-12 gap-4 px-2 md:px-4 lg:px-8 mt-2">
                 <div className="col-span-12 lg:col-span-8">
                     <Insightstime data={currentData} range={range} />
                 </div>
@@ -32,8 +32,8 @@ export default function Insights() {
                     <Quarterexpense />
                 </div>
 
-                <div className="col-span-12 flex justify-center py-2">
-                    <div style={{ width: '80vw' }}>
+                <div className="col-span-12 flex justify-center py-2 lg:py-4">
+                    <div className="w-full lg:w-[80vw]">
                         <Transection />
                     </div>
                 </div>
