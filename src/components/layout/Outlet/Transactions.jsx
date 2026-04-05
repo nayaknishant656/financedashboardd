@@ -1,21 +1,30 @@
 import React, { useState, useMemo } from 'react'
-import { FiSearch, FiFilter, FiArrowUpRight, FiArrowDownLeft, FiChevronDown, FiCalendar } from 'react-icons/fi'
+import { FiSearch, FiFilter, FiArrowUpRight, FiArrowDownLeft, FiChevronDown, FiCalendar, FiEdit2, FiTrash2, FiSave, FiX } from 'react-icons/fi'
 import dashboardStats from '../../../pages/dashboard/data/dashboardStats.json'
+import { useAuth } from '../../../context/AuthContext'
 
 export default function Transactions() {
+    const { userRole } = useAuth();
+    const isAdmin = userRole === 'Admin';
+
+    const [transactions, setTransactions] = useState(dashboardStats.transactionHistory);
     const [searchTerm, setSearchTerm] = useState('');
     const [filterType, setFilterType] = useState('all');
     const [filterCategory, setFilterCategory] = useState('all');
     const [sortConfig, setSortConfig] = useState({ key: 'date', direction: 'desc' });
 
+    // Edit state
+    const [editingId, setEditingId] = useState(null);
+    const [editData, setEditData] = useState({});
+
     // Extract unique categories
     const categories = useMemo(() => {
-        const cats = new Set(dashboardStats.transactionHistory.map(tx => tx.category));
+        const cats = new Set(transactions.map(tx => tx.category));
         return ['all', ...Array.from(cats)];
-    }, []);
+    }, [transactions]);
 
     const filteredTransactions = useMemo(() => {
-        let result = [...dashboardStats.transactionHistory];
+        let result = [...transactions];
 
         // Search Filter
         if (searchTerm) {
@@ -45,12 +54,12 @@ export default function Transactions() {
             }
 
             return sortConfig.direction === 'asc'
-                ? valA.localeCompare(valB)
-                : valB.localeCompare(valA);
+                ? valA.toString().localeCompare(valB.toString())
+                : valB.toString().localeCompare(valA.toString());
         });
 
         return result;
-    }, [searchTerm, filterType, filterCategory, sortConfig]);
+    }, [transactions, searchTerm, filterType, filterCategory, sortConfig]);
 
     const handleSort = (key) => {
         setSortConfig({
@@ -59,16 +68,45 @@ export default function Transactions() {
         });
     };
 
+    const handleDelete = (id) => {
+        if (window.confirm('Are you sure you want to delete this transaction record?')) {
+            setTransactions(transactions.filter(tx => tx.id !== id));
+        }
+    };
+
+    const startEdit = (tx) => {
+        setEditingId(tx.id);
+        setEditData({ ...tx });
+    };
+
+    const cancelEdit = () => {
+        setEditingId(null);
+        setEditData({});
+    };
+
+    const saveEdit = () => {
+        setTransactions(transactions.map(tx => tx.id === editingId ? editData : tx));
+        setEditingId(null);
+    };
+
+    const handleEditChange = (e) => {
+        const { name, value } = e.target;
+        setEditData(prev => ({
+            ...prev,
+            [name]: name === 'amount' ? parseFloat(value) : value
+        }));
+    };
+
     // Calculate 30-day metrics
     const stats30Days = useMemo(() => {
         const thirtyDaysAgo = new Date('2024-04-05');
         thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
 
-        const recent = dashboardStats.transactionHistory.filter(tx => new Date(tx.date) >= thirtyDaysAgo);
+        const recent = transactions.filter(tx => new Date(tx.date) >= thirtyDaysAgo);
         const outgoing = recent.filter(tx => tx.type === 'debit').length;
 
         return { total: recent.length, outgoing };
-    }, []);
+    }, [transactions]);
 
     return (
         <div className="p-8 bg-background min-h-[calc(100vh-64px)]">
@@ -76,7 +114,12 @@ export default function Transactions() {
                 <div className="flex flex-col lg:flex-row lg:items-center justify-between mb-8 space-y-6 lg:space-y-0 border-b border-divider pb-8">
                     <div className="flex items-center space-x-8">
                         <div>
-                            <h1 className="text-2xl font-black text-text-primary tracking-tight uppercase">Audit Logs</h1>
+                            <div className="flex items-center gap-3">
+                                <h1 className="text-2xl font-black text-text-primary tracking-tight uppercase">Audit Logs</h1>
+                                <span className={`px-2 py-0.5 rounded text-[10px] font-black uppercase ${isAdmin ? 'bg-primary/20 text-primary' : 'bg-text-secondary/20 text-text-secondary'}`}>
+                                    {userRole} Context
+                                </span>
+                            </div>
                             <p className="text-[10px] font-bold text-text-secondary uppercase tracking-widest mt-1">Full financial history and tracking</p>
                         </div>
 
@@ -154,6 +197,11 @@ export default function Transactions() {
                                 <th onClick={() => handleSort('amount')} className="px-6 py-4 text-right text-[10px] font-black text-text-secondary uppercase tracking-widest cursor-pointer hover:text-primary transition-colors">
                                     Amount <FiChevronDown className="inline ml-1" />
                                 </th>
+                                {isAdmin && (
+                                    <th className="px-6 py-4 text-center text-[10px] font-black text-text-secondary uppercase tracking-widest">
+                                        Actions
+                                    </th>
+                                )}
                             </tr>
                         </thead>
                         <tbody className="divide-y divide-divider/50">
@@ -165,24 +213,106 @@ export default function Transactions() {
                                                 }`}>
                                                 {tx.type === 'credit' ? <FiArrowUpRight /> : <FiArrowDownLeft />}
                                             </div>
-                                            <span className="text-sm font-bold text-text-primary tracking-tight">{tx.company}</span>
+                                            {editingId === tx.id ? (
+                                                <input
+                                                    name="company"
+                                                    value={editData.company}
+                                                    onChange={handleEditChange}
+                                                    className="bg-background border border-primary rounded px-2 py-1 text-sm font-bold w-40"
+                                                />
+                                            ) : (
+                                                <span className="text-sm font-bold text-text-primary tracking-tight">{tx.company}</span>
+                                            )}
                                         </div>
                                     </td>
                                     <td className="px-6 py-4">
-                                        <span className="px-3 py-1 bg-background border border-divider rounded-full text-[10px] font-bold text-text-secondary uppercase">
-                                            {tx.category}
-                                        </span>
+                                        {editingId === tx.id ? (
+                                            <input
+                                                name="category"
+                                                value={editData.category}
+                                                onChange={handleEditChange}
+                                                className="bg-background border border-primary rounded px-2 py-1 text-[10px] font-bold w-24"
+                                            />
+                                        ) : (
+                                            <span className="px-3 py-1 bg-background border border-divider rounded-full text-[10px] font-bold text-text-secondary uppercase">
+                                                {tx.category}
+                                            </span>
+                                        )}
                                     </td>
                                     <td className="px-6 py-4 text-sm font-medium text-text-secondary">
                                         <div className="flex items-center">
                                             <FiCalendar className="mr-2 opacity-50" />
-                                            {tx.date}
+                                            {editingId === tx.id ? (
+                                                <input
+                                                    name="date"
+                                                    type="date"
+                                                    value={editData.date}
+                                                    onChange={handleEditChange}
+                                                    className="bg-background border border-primary rounded px-2 py-1 text-sm"
+                                                />
+                                            ) : (
+                                                tx.date
+                                            )}
                                         </div>
                                     </td>
                                     <td className={`px-6 py-4 text-sm font-black text-right ${tx.type === 'credit' ? 'text-success' : 'text-text-primary'
                                         }`}>
-                                        {tx.type === 'credit' ? '+' : '-'}${tx.amount.toLocaleString(undefined, { minimumFractionDigits: 2 })}
+                                        {editingId === tx.id ? (
+                                            <div className="flex items-center justify-end">
+                                                <span>₹</span>
+                                                <input
+                                                    name="amount"
+                                                    type="number"
+                                                    value={editData.amount}
+                                                    onChange={handleEditChange}
+                                                    className="bg-background border border-primary rounded px-2 py-1 text-sm font-black w-24 text-right"
+                                                />
+                                            </div>
+                                        ) : (
+                                            `${tx.type === 'credit' ? '+' : '-'}₹${tx.amount.toLocaleString(undefined, { minimumFractionDigits: 2 })}`
+                                        )}
                                     </td>
+                                    {isAdmin && (
+                                        <td className="px-6 py-4">
+                                            <div className="flex items-center justify-center space-x-2">
+                                                {editingId === tx.id ? (
+                                                    <>
+                                                        <button
+                                                            onClick={saveEdit}
+                                                            className="p-2 bg-success text-white rounded-lg hover:bg-success/90 transition-all shadow-lg shadow-success/20"
+                                                            title="Save"
+                                                        >
+                                                            <FiSave />
+                                                        </button>
+                                                        <button
+                                                            onClick={cancelEdit}
+                                                            className="p-2 bg-text-secondary text-white rounded-lg hover:bg-text-secondary/90 transition-all"
+                                                            title="Cancel"
+                                                        >
+                                                            <FiX />
+                                                        </button>
+                                                    </>
+                                                ) : (
+                                                    <>
+                                                        <button
+                                                            onClick={() => startEdit(tx)}
+                                                            className="p-2 text-text-secondary hover:text-primary hover:bg-primary/10 rounded-lg transition-all"
+                                                            title="Edit Transaction"
+                                                        >
+                                                            <FiEdit2 />
+                                                        </button>
+                                                        <button
+                                                            onClick={() => handleDelete(tx.id)}
+                                                            className="p-2 text-text-secondary hover:text-danger hover:bg-danger/10 rounded-lg transition-all"
+                                                            title="Delete Transaction"
+                                                        >
+                                                            <FiTrash2 />
+                                                        </button>
+                                                    </>
+                                                )}
+                                            </div>
+                                        </td>
+                                    )}
                                 </tr>
                             ))}
                         </tbody>
