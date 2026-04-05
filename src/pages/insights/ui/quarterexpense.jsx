@@ -12,7 +12,7 @@ export default function Quarterexpense() {
             datasets: [
                 {
                     label: 'Quarterly Expenditures',
-                    data: [54000, 32500, 70200, 62000],
+                    data: [540000, 325000, 702000, 620000],
                     backgroundColor: [
                         'rgba(37, 99, 235, 0.2)', // Primary Blue
                         'rgba(16, 185, 129, 0.2)', // Success Green
@@ -48,7 +48,7 @@ export default function Quarterexpense() {
                     ticks: {
                         color: '#64748B',
                         font: { size: 10, weight: 'bold' },
-                        callback: (value) => `$${value / 1000}k`
+                        callback: (value) => `₹${value / 1000}k`
                     }
                 },
                 x: {
@@ -68,8 +68,8 @@ export default function Quarterexpense() {
     }, []);
 
     return (
-        <div className="p-4 pt-1">
-            <div className="bg-card p-6 rounded-2xl border border-divider shadow-sm min-h-[400px] flex flex-col">
+        <div className="p-0">
+            <div className="bg-card p-4 rounded-2xl border border-divider shadow-sm min-h-[400px] flex flex-col">
                 <div className="flex justify-between items-center mb-6">
                     <h3 className="text-[11px] font-black text-text-secondary uppercase tracking-widest leading-none">Quarterly Expense Breakdown</h3>
                     <div className="px-3 py-1 bg-background border border-divider rounded-full">

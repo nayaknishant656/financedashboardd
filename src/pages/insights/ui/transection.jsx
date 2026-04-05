@@ -15,9 +15,9 @@ export default function Transection() {
     }, [currentPage, allTransactions]);
 
     return (
-        <div className="p-4 pt-1 h-full">
+        <div className="p-0 h-full">
             <div className="bg-card rounded-2xl border border-divider shadow-sm flex flex-col h-full overflow-hidden">
-                <div className="p-6 border-b border-divider flex justify-between items-center bg-card/50">
+                <div className="p-4 border-b border-divider flex justify-between items-center bg-card/50">
                     <div>
                         <h3 className="text-[11px] font-black text-text-secondary uppercase tracking-widest leading-none">Detailed Audit Stream</h3>
                         <p className="text-[9px] font-bold text-text-secondary mt-1 uppercase opacity-60">Full historical trace for compliance</p>
@@ -58,7 +58,7 @@ export default function Transection() {
                                 <div className="text-right">
                                     <div className={`text-sm font-black tracking-tighter ${tx.type === 'credit' ? 'text-success' : 'text-text-primary'
                                         }`}>
-                                        {tx.type === 'credit' ? '+' : '-'}${tx.amount.toLocaleString(undefined, { minimumFractionDigits: 2 })}
+                                        {tx.type === 'credit' ? '+' : '-'}₹{tx.amount.toLocaleString(undefined, { minimumFractionDigits: 2 })}
                                     </div>
                                     <div className="text-[8px] font-bold text-text-secondary uppercase mt-0.5 opacity-50">Settled Audit</div>
                                 </div>
@@ -82,8 +82,8 @@ export default function Transection() {
                                 key={i}
                                 onClick={() => setCurrentPage(i + 1)}
                                 className={`w-8 h-8 rounded-lg text-[10px] font-black transition-all ${currentPage === i + 1
-                                        ? 'bg-primary text-white shadow-lg shadow-primary/20'
-                                        : 'text-text-secondary hover:bg-card border border-transparent'
+                                    ? 'bg-primary text-white shadow-lg shadow-primary/20'
+                                    : 'text-text-secondary hover:bg-card border border-transparent'
                                     }`}
                             >
                                 {i + 1}
