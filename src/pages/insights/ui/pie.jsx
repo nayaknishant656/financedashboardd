@@ -7,8 +7,8 @@ export default function Pie() {
     const data = dashboardStats.financeInsights.assetAllocation;
 
     return (
-        <div className="p-4 pt-1 h-full">
-            <div className="bg-card p-6 rounded-2xl border border-divider shadow-sm min-h-[400px] flex flex-col items-center">
+        <div className="p-0 h-full">
+            <div className="bg-card p-4 rounded-2xl border border-divider shadow-sm min-h-[400px] flex flex-col items-center">
                 <div className="flex justify-between items-center mb-6 w-full">
                     <h3 className="text-[11px] font-black text-text-secondary uppercase tracking-widest leading-none">Portfolio Allocation</h3>
                     <div className="px-3 py-1 bg-background border border-divider rounded-full">

@@ -7,36 +7,36 @@ export default function Cards() {
 
     const cardsData = [
         {
-            title: "Saved in Past 3 Months",
+            title: "Net Profit (L3M)",
             amount: past3MonthsSaved,
             color: "text-success",
             bgColor: "bg-success/10",
             icon: <FiTrendingUp />,
-            desc: "Net accumulation since Jan 2024"
+            desc: "Net accumulation after tax & interest"
         },
         {
-            title: "Spent in Past 3 Months",
+            title: "Op. Expenses (L3M)",
             amount: past3MonthsSpent,
             color: "text-danger",
             bgColor: "bg-danger/10",
             icon: <FiTrendingDown />,
-            desc: "Total expenditure audit for Q1"
+            desc: "Total operational burn rate for Q1"
         },
         {
-            title: "Target Potential Savings",
+            title: "Projected Growth Capital",
             amount: potentialSavings,
             color: "text-primary",
             bgColor: "bg-primary/10",
             icon: <FiTarget />,
-            desc: "Optimized untapped capital forecast"
+            desc: "Estimated reinvestment capacity"
         }
     ];
 
     return (
-        <div className="p-4 pt-1">
+        <div className="p-0">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {cardsData.map((card, idx) => (
-                    <div key={idx} className="bg-card p-6 rounded-2xl border border-divider shadow-sm group hover:border-primary transition-all duration-300 relative overflow-hidden">
+                    <div key={idx} className="bg-card p-4 rounded-2xl border border-divider shadow-sm group hover:border-primary transition-all duration-300 relative overflow-hidden">
                         {/* Decorative circle backdrop */}
                         <div className={`absolute -right-4 -bottom-4 w-24 h-24 rounded-full ${card.bgColor} opacity-20 group-hover:scale-125 transition-transform duration-500`}></div>
 
@@ -48,9 +48,9 @@ export default function Cards() {
                                 <span className="text-[10px] font-black text-text-secondary uppercase tracking-widest">{card.title}</span>
                                 <div className="flex items-baseline space-x-1">
                                     <span className="text-xl font-black text-text-primary tracking-tight">
-                                        ${card.amount.toLocaleString()}
+                                        ₹{card.amount.toLocaleString()}
                                     </span>
-                                    <span className="text-[10px] font-bold text-text-secondary opacity-50 uppercase">USD</span>
+                                    <span className="text-[10px] font-bold text-text-secondary opacity-50 uppercase">INR</span>
                                 </div>
                                 <p className="text-[9px] font-bold text-text-secondary mt-1">{card.desc}</p>
                             </div>
@@ -58,7 +58,7 @@ export default function Cards() {
 
                         <div className="mt-4 flex items-center justify-between relative">
                             <div className="px-2 py-0.5 bg-background rounded-md border border-divider text-[8px] font-black uppercase text-text-secondary">
-                                Q1 Audit Status
+                                Q1 Fiscal Status
                             </div>
                             <FiChevronRight className="text-divider group-hover:text-primary transition-colors cursor-pointer" />
                         </div>

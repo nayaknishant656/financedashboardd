@@ -89,8 +89,8 @@ export default function Insightstime({ data, range }) {
     };
 
     return (
-        <div className="px-8 pb-8">
-            <div className="bg-card p-6 rounded-2xl border border-divider shadow-sm">
+        <div className="p-0">
+            <div className="bg-card p-4 rounded-2xl border border-divider shadow-sm">
                 <div id="chart">
                     <ReactApexChart
                         key={range} // Force re-render on range change for clean animations
